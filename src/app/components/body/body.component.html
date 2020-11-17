@@ -1,0 +1,43 @@
+<div class="row">
+  <div class="col">
+    <h1>*ngIf</h1>
+    <!-- hr es una línea -->
+    <hr />
+
+    <div
+      *ngIf="showSentence"
+      class="card text-white bg-info mb-3"
+      style="width: 100%"
+    >
+      <!-- max-width: 18rem -->
+      <div class="card-body">
+        <h5 class="card-title">{{ sentence.author }}</h5>
+        <p class="card-text">
+          {{ sentence.message }}
+        </p>
+      </div>
+    </div>
+
+    <!-- Al hacer Click la variable tomar el valor contrario al actual: -->
+    <button
+      (click)="showSentence = !showSentence"
+      class="btn btn-outline-primary btn-block"
+    >
+      Mostrar/Ocultar
+    </button>
+    <!-- btn-block: usa el ancho que disponga -->
+  </div>
+
+  <div class="col">
+    <h1>*ngFor</h1>
+    <hr />
+    <ul class="list-group">
+      <li
+        *ngFor="let character of characters; let i = index"
+        class="list-group-item"
+      >
+        {{ i + 1 }} - {{ character }}
+      </li>
+    </ul>
+  </div>
+</div>
